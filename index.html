@@ -4,18 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Leonardo Bora — AI Engineer & Agentic Orchestration</title>
-  <meta name="description" content="Leonardo Bora da Costa — Software Engineer, LLM agents, RAG, AI governance & safety. Trainee @ Lightera. Bora Falar de IA." />
-
-  <!-- Google Fonts: display + pixel labels (DESIGN.md substitutes) -->
-  ts.googleapis.com">
-  https://fonts.gstatic.com
-  family=Archivo+Black&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
-
-  <link rel="styleshe============ ANALYTICS SLOT ============
-       Opção A (recomendado, privacy-friendly): Plausible
+  <meta name="description" content="Leonardo Bora da Costa — Software Engineer, LLM agents, RAG, AI governance & safety. Trainee @ Lightera." />
+  <!-- ============ ANALYTICS SLOT ============
+       Option A (recommended, privacy-friendly): Plausible
        <script defer data-domain="leonardobora.github.io" src="https://plausible.io/js/script.js"></script>
 
-       Opção B: Google Analytics 4 — troque G-XXXXXXX
+       Option B: Google Analytics 4 - replace G-XXXXXXX
        <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
        <script>
          window.dataLayer = window.dataLayer || [];
@@ -23,24 +17,143 @@
          gtag('js', new Date());
          gtag('config', 'G-XXXXXXX');
        </script>
-  ======================================== -->
+  ============================================ -->
+  <style>
+
+:root{
+  --primary:#e60012; --signal:#f68d1f; --amber:#ecab37; --nav-gold:#e48600;
+  --canvas:#7a8aba; --canvas-soft:#9fbee7; --lavender:#acace7; --ice:#c0d5e6;
+  --periwinkle:#8ba1d4; --chrome-indigo:#3d4f97; --muted-indigo:#60619c;
+  --platinum:#dedede; --surface:#ffffff; --carbon:#21242e; --hairline:#5a5f8c;
+  --systems-teal:#206479; --games-red:#a7282b;
+  --ink:#21242e; --ink-soft:#3d4f97; --on-primary:#ffffff;
+  --r-none:0; --r-xs:2px; --r-sm:4px; --r-md:6px; --r-lg:10px; --r-full:9999px;
+  --s-xxs:2px; --s-xs:4px; --s-sm:8px; --s-md:12px; --s-lg:16px; --s-xl:24px; --s-xxl:32px;
+  --f-body:Arial, Helvetica, sans-serif;
+  --f-display:"Archivo Black", "Arial Black", sans-serif;
+  --f-pixel:"Silkscreen", "VT323", monospace;
+}
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{margin:0; font-family:var(--f-body); color:var(--ink); background:var(--canvas);
+  background-image:radial-gradient(rgba(33,36,46,.10) 1px, transparent 1px);
+  background-size:6px 6px; padding:var(--s-lg);}
+.plate,.hero-panel,.info-box,.promo-card,.repo-card,.exp-item{
+  border-top:1px solid rgba(255,255,255,.55); border-left:1px solid rgba(255,255,255,.35);
+  border-right:1px solid var(--chrome-indigo); border-bottom:2px solid var(--chrome-indigo);}
+.machine{max-width:960px; margin:0 auto; background:var(--canvas);
+  border:2px solid var(--chrome-indigo); border-radius:var(--r-lg); overflow:hidden;}
+.masthead{display:flex; justify-content:space-between; align-items:center;
+  padding:var(--s-sm) var(--s-md); gap:var(--s-sm);}
+.mascot-bubble{display:flex; align-items:center; gap:var(--s-sm); background:var(--surface);
+  border-radius:var(--r-lg); padding:var(--s-xs) var(--s-md); border:1px solid var(--hairline);}
+.mascot{font-family:var(--f-pixel); font-size:9px; line-height:1; color:var(--chrome-indigo); margin:0;}
+.bubble-text{font-family:var(--f-pixel); font-size:11px; color:var(--carbon);}
+.nav-bar{display:flex; align-items:center; gap:var(--s-md); background:var(--carbon);
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px);
+  background-size:4px 4px; padding:var(--s-sm) var(--s-md); flex-wrap:wrap;}
+.logo-pill{background:var(--surface); color:var(--primary); font-family:var(--f-display);
+  font-size:16px; border-radius:var(--r-full); padding:2px var(--s-md);}
+.logo-pill span{color:var(--carbon); font-size:11px;}
+.nav-links{list-style:none; display:flex; gap:var(--s-lg); margin:0; padding:0; flex-wrap:wrap;}
+.nav-link{background:none; border:none; cursor:pointer; color:var(--nav-gold);
+  font-family:var(--f-body); font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase;}
+.nav-link:hover{color:var(--amber);}
+.nav-link.active{color:var(--signal); text-shadow:0 0 6px rgba(246,141,31,.6);}
+.nav-toggle{display:none;}
+.subnav-strip{background:var(--canvas-soft); color:var(--ink); font-size:11px; font-weight:700;
+  letter-spacing:.5px; text-transform:uppercase; padding:var(--s-xs) var(--s-md);
+  display:flex; gap:var(--s-sm); flex-wrap:wrap;}
+.subnav-strip .sep{color:var(--muted-indigo);}
+.body-grid{display:grid; grid-template-columns:2fr 1fr; gap:var(--s-lg); padding:var(--s-lg);}
+.content-col{min-width:0;}
+.stack{display:flex; flex-direction:column; gap:var(--s-md);}
+.plate{background:var(--canvas); border-radius:var(--r-md); padding:0 0 var(--s-md); margin-bottom:var(--s-lg);}
+.section-label-bar{background:var(--canvas); color:var(--ink); font-size:11px; font-weight:700;
+  letter-spacing:.5px; text-transform:uppercase; padding:var(--s-sm) var(--s-md);
+  border-bottom:1px solid var(--chrome-indigo); display:flex; align-items:center; gap:var(--s-xs);}
+.section-label-bar::before{content:"\25A4"; color:var(--chrome-indigo);}
+.body-copy{font-size:13px; line-height:1.5; color:var(--ink); padding:var(--s-md) var(--s-md) 0; margin:0;}
+.hero-panel{background:var(--lavender);
+  background-image:linear-gradient(135deg, var(--lavender), var(--periwinkle));
+  border-radius:var(--r-md); padding:var(--s-xl); margin-bottom:var(--s-lg);}
+.display{font-family:var(--f-display); font-size:clamp(28px,6vw,44px); line-height:1;
+  color:var(--surface); margin:0; -webkit-text-stroke:1px var(--carbon);
+  text-shadow:3px 3px 0 var(--carbon);}
+.display.small{font-size:22px;}
+.hero-tagline{font-size:15px; font-weight:700; line-height:1.3; color:var(--ink); margin:var(--s-md) 0;}
+.hero-cta{display:flex; gap:var(--s-sm); flex-wrap:wrap;}
+.btn-icon-arrow{background:var(--signal); color:var(--on-primary); text-decoration:none;
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+  padding:var(--s-sm) var(--s-md); border-radius:var(--r-xs);
+  border-top:1px solid rgba(255,255,255,.5); border-bottom:2px solid #b5620f;}
+.btn-icon-arrow:hover{background:#ff9a2e;}
+.btn-secondary{display:block; background:var(--carbon); color:var(--on-primary); text-decoration:none;
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+  padding:var(--s-md); margin-bottom:var(--s-sm);
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size:4px 4px;}
+.btn-secondary:hover{color:var(--signal);}
+.chip{background:var(--amber); color:var(--carbon); border:none; cursor:pointer;
+  font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.5px;
+  padding:var(--s-xs) var(--s-sm); border-radius:var(--r-xs);
+  border-top:1px solid rgba(255,255,255,.5); border-bottom:2px solid var(--nav-gold);}
+.rail{min-width:0;}
+.info-box{background:var(--surface); border-radius:var(--r-sm); padding:var(--s-md); margin-top:var(--s-md);}
+.info-tab{background:var(--amber); color:var(--carbon); display:inline-block; font-size:11px;
+  font-weight:700; text-transform:uppercase; padding:2px var(--s-sm); border-radius:var(--r-xs); margin-bottom:var(--s-sm);}
+.info-box .body-copy{padding:0;}
+.promo-card{background:var(--lavender); border-radius:var(--r-sm); padding:var(--s-md); margin-top:var(--s-md); text-align:center;}
+.exp-item{background:var(--platinum); border-radius:var(--r-sm); padding:var(--s-md); margin:0 var(--s-md);}
+.exp-item h3{margin:0; font-size:13px; color:var(--ink-soft);}
+.exp-item .meta{font-size:11px; font-weight:700; color:var(--muted-indigo); text-transform:uppercase; letter-spacing:.5px; margin:2px 0 var(--s-xs);}
+.exp-item p{margin:0; font-size:12px; line-height:1.45; color:var(--ink);}
+.chip-list{list-style:none; display:flex; flex-wrap:wrap; gap:var(--s-sm); padding:var(--s-md); margin:0;}
+.chip-list li{background:var(--surface); color:var(--ink); font-size:12px; padding:var(--s-xs) var(--s-md);
+  border-radius:var(--r-sm); border:1px solid var(--hairline);}
+.repo-grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:var(--s-md); padding:var(--s-md);}
+.repo-card{background:var(--surface); border-radius:var(--r-sm); padding:var(--s-md); text-decoration:none;
+  display:flex; flex-direction:column; gap:var(--s-xs);}
+.repo-card:hover{background:var(--ice);}
+.repo-card h4{margin:0; font-size:13px; color:var(--ink-soft); word-break:break-word;}
+.repo-card p{margin:0; font-size:11px; line-height:1.4; color:var(--ink); flex:1;}
+.repo-meta{display:flex; gap:var(--s-md); font-size:10px; color:var(--muted-indigo); font-weight:700;}
+.repo-lang{display:inline-flex; align-items:center; gap:4px;}
+.repo-lang::before{content:"\25CF"; color:var(--signal);}
+.footer-bar{background:var(--carbon); color:var(--canvas-soft);
+  background-image:radial-gradient(rgba(255,255,255,.06) 1px, transparent 1px); background-size:4px 4px;
+  padding:var(--s-lg); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:var(--s-sm);}
+.esrb-badge{background:var(--amber); color:var(--carbon); padding:2px var(--s-sm); border-radius:var(--r-xs);}
+.micro{font-size:10px; line-height:1.3;}
+.tab-panel{display:none;}
+.tab-panel.active{display:block; animation:fade .25s ease;}
+@keyframes fade{from{opacity:0; transform:translateY(4px);} to{opacity:1; transform:none;}}
+[data-lang="pt"] .lang-en{display:none;}
+[data-lang="en"] .lang-pt{display:none;}
+@media (max-width:760px){
+  body{padding:var(--s-sm);}
+  .body-grid{grid-template-columns:1fr;}
+  .rail{order:2;}
+  .nav-links{display:none; width:100%; flex-direction:column; gap:var(--s-sm);}
+  .nav-links.open{display:flex;}
+  .nav-toggle{display:inline-block; margin-left:auto;}
+  .nav-link{min-height:44px;}
+  .btn-icon-arrow,.chip{min-height:44px; display:inline-flex; align-items:center;}
+}
+
+  </style>
 </head>
 <body>
   <div class="machine">
-
-    <!-- MASTHEAD: mascote ASCII + toggles -->
     <header class="masthead">
       <div class="mascot-bubble">
-        <pre class="mascot" aria-hidden="true">
-   ┌───────┐
+        <pre class="mascot" aria-hidden="true">   ┌───────┐
    │ ▚   ▚ │
    │   ▔   │
    │ ═════ │
    └──┬─┬──┘
-      ╹ ╹        </pre>
+      ╹ ╹</pre>
         <span class="bubble-text" data-i18n="mascot"></span>
       </div>
-
       <div class="masthead-controls">
         <button id="langToggle" class="chip" aria-label="Toggle language">
           <span class="lang-pt">🌐 EN</span>
@@ -49,23 +162,21 @@
       </div>
     </header>
 
-    <!-- PRIMARY NAV (carbon slab) -->
     <nav class="nav-bar" aria-label="Primary">
       <div class="logo-pill">LB<span>.dev</span></div>
       <ul class="nav-links" id="navLinks">
-        <li><button class="nav-link active" data-tab="home"      data-i18n="nav.home"></button></li>
-        <li><button class="nav-link"        data-tab="exp"       data-i18n="nav.exp"></button></li>
-        <li><button class="nav-link"        data-tab="edu"       data-i18n="nav.edu"></button></li>
-        <li><button class="nav-link"        data-tab="certs"     data-i18n="nav.certs"></button></li>
-        <li><button class="nav-link"        data-tab="pubs"      data-i18n="nav.pubs"></button></li>
-        <li><button class="nav-link"        data-tab="mcp"       data-i18n="nav.mcp"></button></li>
-        <li><button class="nav-link"        data-tab="projects"  data-i18n="nav.projects"></button></li>
-        <li><button class="nav-link"        data-tab="awards"    data-i18n="nav.awards"></button></li>
+        <li><button class="nav-link active" data-tab="home"     data-i18n="nav.home"></button></li>
+        <li><button class="nav-link"        data-tab="exp"      data-i18n="nav.exp"></button></li>
+        <li><button class="nav-link"        data-tab="edu"      data-i18n="nav.edu"></button></li>
+        <li><button class="nav-link"        data-tab="certs"    data-i18n="nav.certs"></button></li>
+        <li><button class="nav-link"        data-tab="pubs"     data-i18n="nav.pubs"></button></li>
+        <li><button class="nav-link"        data-tab="mcp"      data-i18n="nav.mcp"></button></li>
+        <li><button class="nav-link"        data-tab="projects" data-i18n="nav.projects"></button></li>
+        <li><button class="nav-link"        data-tab="awards"   data-i18n="nav.awards"></button></li>
       </ul>
       <button class="chip nav-toggle" id="navToggle" aria-label="Menu">☰</button>
     </nav>
 
-    <!-- SUBNAV strip -->
     <div class="subnav-strip">
       <span data-i18n="sub.role"></span>
       <span class="sep">•</span>
@@ -75,10 +186,8 @@
     </div>
 
     <main class="body-grid">
-      <!-- CONTENT COLUMN -->
       <section class="content-col">
 
-        <!-- HERO / HOME -->
         <div class="tab-panel active" id="tab-home">
           <div class="hero-panel">
             <h1 class="display" data-i18n="hero.name"></h1>
@@ -88,14 +197,12 @@
               <a class="btn-icon-arrow" href="https://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">LinkedIn ▸</a>
             </div>
           </div>
-
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="label.summary"></span></div>
             <p class="body-copy" data-i18n="summary"></p>
           </div>
         </div>
 
-        <!-- EXPERIENCE -->
         <div class="tab-panel" id="tab-exp">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.exp"></span></div>
@@ -103,7 +210,6 @@
           </div>
         </div>
 
-        <!-- EDUCATION -->
         <div class="tab-panel" id="tab-edu">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.edu"></span></div>
@@ -111,7 +217,6 @@
           </div>
         </div>
 
-        <!-- CERTIFICATIONS -->
         <div class="tab-panel" id="tab-certs">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.certs"></span></div>
@@ -119,7 +224,6 @@
           </div>
         </div>
 
-        <!-- PUBLICATIONS -->
         <div class="tab-panel" id="tab-pubs">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.pubs"></span></div>
@@ -127,7 +231,6 @@
           </div>
         </div>
 
-        <!-- MCP / TOP SKILLS -->
         <div class="tab-panel" id="tab-mcp">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.mcp"></span></div>
@@ -136,7 +239,6 @@
           </div>
         </div>
 
-        <!-- PROJECTS (GitHub API) -->
         <div class="tab-panel" id="tab-projects">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.projects"></span></div>
@@ -147,7 +249,6 @@
           </div>
         </div>
 
-        <!-- AWARDS -->
         <div class="tab-panel" id="tab-awards">
           <div class="plate">
             <div class="section-label-bar"><span data-i18n="nav.awards"></span></div>
@@ -157,18 +258,15 @@
 
       </section>
 
-      <!-- RIGHT ACTION RAIL -->
       <aside class="rail">
         <a class="btn-secondary" href="https://github.com/leonardobora" target="_blank" rel="noopener">▸ GitHub</a>
-        ://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">▸ LinkedIn</a>
-        ardo.bora@outlook.com">▸ E-mail</a>
+        <a class="btn-secondary" href="https://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">▸ LinkedIn</a>
+        <a class="btn-secondary" href="mailto:leonardo.bora@outlook.com">▸ E-mail</a>
         <a class="btn-secondary" id="newsletterBtn" href="https://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">▸ Bora Falar de IA</a>
-
         <div class="info-box">
           <div class="info-tab" data-i18n="info.title"></div>
           <p class="body-copy" data-i18n="info.body"></p>
         </div>
-
         <div class="promo-card">
           <span class="display small">MCP</span>
           <p class="micro" data-i18n="promo.mcp"></p>
@@ -182,6 +280,97 @@
     </footer>
   </div>
 
-  app.js
+  <script>
+
+const USERNAME = "leonardobora";
+const I18N = {"pt": {"mascot": "Bem-vindo! ▸", "nav.home": "Início", "nav.exp": "Experiência", "nav.edu": "Educação", "nav.certs": "Certificações", "nav.pubs": "Publicações", "nav.mcp": "MCP & Skills", "nav.projects": "Projetos", "nav.awards": "Prêmios", "sub.role": "Trainee @ Lightera", "sub.tag": "Agentic Orchestration · AI Safety", "hero.name": "LEONARDO BORA", "hero.tagline": "Engenheiro de software que pensa IA de outro jeito. Agentes LLM, RAG e IA com privacidade, traduzidos para quem decide.", "label.summary": "Resumo", "summary": "Sou engenheiro de software que pensa em IA de forma diferente. Em vez de perseguir o próximo benchmark, foco no que acontece quando a IA encontra organizações, políticas e pessoas reais. Meu trabalho fica na interseção entre agentes LLM, sistemas RAG e IA consciente de privacidade, mas o que me move é traduzir essas tecnologias para uma linguagem que stakeholders não técnicos entendam, questionem e usem. Estou de volta à Lightera, agora como Trainee do programa 2026: 12 meses de job rotation por engenharia de fábrica, supply chain, controladoria e estratégia comercial. Acredito que construir cultura de IA não é implantar ferramentas, e sim desenvolver consciência coletiva sobre o que a IA pode e deve fazer. Menos hype, mais conversa honesta sobre ética, segurança e o poder real de humanos e máquinas trabalhando juntos.", "mcp.intro": "Principais competências técnicas em destaque no meu perfil.", "projects.intro": "Repositórios públicos, puxados ao vivo da API do GitHub (ordenados por relevância).", "projects.loading": "Carregando repositórios…", "info.title": "O que é MCP?", "info.body": "Model Context Protocol: padrão aberto para conectar modelos de IA a ferramentas e dados de forma segura e padronizada.", "promo.mcp": "Model Context Protocol", "footer.rights": "Todos os direitos reservados."}, "en": {"mascot": "Welcome! ▸", "nav.home": "Home", "nav.exp": "Experience", "nav.edu": "Education", "nav.certs": "Certifications", "nav.pubs": "Publications", "nav.mcp": "MCP & Skills", "nav.projects": "Projects", "nav.awards": "Awards", "sub.role": "Trainee @ Lightera", "sub.tag": "Agentic Orchestration · AI Safety", "hero.name": "LEONARDO BORA", "hero.tagline": "A software engineer who thinks about AI differently. LLM agents, RAG & privacy-aware AI, translated for decision-makers.", "label.summary": "Summary", "summary": "I'm a software engineer who thinks about AI differently. Rather than chasing the next benchmark, I focus on what happens when AI meets real organizations, policies, and people. My work sits at the intersection of LLM agents, RAG systems and privacy-aware AI, but what drives me is translating these technologies into language non-technical stakeholders can understand, question and act on. I'm back at Lightera, now as a Trainee in the 2026 program: a 12-month job rotation across factory engineering, supply chain, controllership and commercial strategy. I believe building an AI culture isn't about deploying tools, it's about developing collective consciousness around what AI can and should do. Less hype, more honest conversation about ethics, safety, and the genuine power of humans and machines working together.", "mcp.intro": "Top technical skills highlighted on my profile.", "projects.intro": "Public repositories, pulled live from the GitHub API (sorted by relevance).", "projects.loading": "Loading repositories…", "info.title": "What is MCP?", "info.body": "Model Context Protocol: an open standard to connect AI models to tools and data in a secure, standardized way.", "promo.mcp": "Model Context Protocol", "footer.rights": "All rights reserved."}};
+const DATA = {"experience": [{"org": "Lightera", "role": {"pt": "Trainee", "en": "Trainee"}, "period": "Apr 2026 — Present · Curitiba, PR", "desc": {"pt": "Selecionado para o competitivo Programa Trainee 2026 da Lightera — 12 meses de job rotation por engenharia de fábrica, supply chain, controladoria e estratégia comercial. Lightera é a marca global unificada da Furukawa Electric para fibra óptica e cabos.", "en": "Selected for Lightera's competitive 2026 Trainee Program — a 12-month job rotation across factory engineering, supply chain, controllership and commercial strategy. Lightera is Furukawa Electric's unified global brand for optical fiber and cable."}}, {"org": "Lightera", "role": {"pt": "Engineering Intern", "en": "Engineering Intern"}, "period": "Apr 2025 — Dec 2025 · Curitiba, PR", "desc": {"pt": "Estágio de engenharia de software no time SPO (Software Product Ownership), na interseção entre produto, desenvolvimento e IA. Ciclo completo em metodologias ágeis, desenvolvimento de aplicações com IA e serviços de nuvem AWS.", "en": "Software engineering intern in the SPO (Software Product Ownership) team, at the intersection of product, development and AI. Full agile lifecycle, AI-powered application development and AWS cloud services."}}, {"org": "Furukawa Electric LatAm", "role": {"pt": "Software Engineer Intern", "en": "Software Engineer Intern"}, "period": "Apr 2024 — Mar 2025 · Curitiba, PR", "desc": {"pt": "Estágio de engenharia embarcado no time de liderança de produto (SPO), antes do rebranding global para Lightera. Sprints ágeis, controle de versão e entrega de incrementos de software em contexto industrial.", "en": "Engineering intern embedded in the software product leadership (SPO) team, before the global rebranding to Lightera. Agile sprints, version control and shipping software increments in an industrial context."}}, {"org": "3MIND TECH", "role": {"pt": "Bubble.io Web Dev Intern", "en": "Bubble.io Web Dev Intern"}, "period": "Aug 2023 — Dec 2023 · Curitiba, PR", "desc": {"pt": "Desenvolvimento de aplicações low-code (Bubble.io) para o setor jurídico-comercial. Prototipagem rápida e tradução de lógica de negócio em arquitetura de aplicação.", "en": "Low-code application development (Bubble.io) for the legal-commercial sector. Rapid prototyping and translating business logic into application architecture."}}, {"org": "NEXTCARD", "role": {"pt": "Consultor de Vendas", "en": "Sales Consultant"}, "period": "Aug 2022 — Aug 2023 · Pinhais, PR", "desc": {"pt": "Consultoria de negócios em soluções de automação comercial: controle de acesso, hardware de identificação e sistema POS. Gestão de relacionamento com cliente ponta a ponta.", "en": "Business consulting in commercial automation solutions: access control, identification hardware and POS systems. End-to-end client relationship management."}}], "education": [{"org": "Pontifícia Universidade Católica do Paraná (PUC-PR)", "role": {"pt": "Pós-graduação — IA & Data Science", "en": "Postgraduate — AI & Data Science"}, "period": "Mar 2026 — Oct 2027"}, {"org": "Unibrasil University Center", "role": {"pt": "Bacharelado em Engenharia de Software", "en": "B.Eng. in Software Engineering"}, "period": "Jan 2022 — Dec 2025"}], "certifications": ["Replit Platform Builder", "Application Security Training (Web, API)", "PIBEP PUC-PR 2026/2027", "Python 3: Avançando na orientação a objetos", "Shopify: Loja online no ar", "BlueDot Impact — AI Safety"], "publications": [{"title": "Agentes de IA a Serviço do Microempreendedor", "period": {"pt": "Publicação", "en": "Publication"}, "desc": {"pt": "Potencializando negócios locais com WhatsApp Business.", "en": "Empowering local businesses with WhatsApp Business."}}], "skills": ["Model Context Protocol (MCP)", "LLM Agents", "RAG & Privacy-aware AI", "AI Governance & Safety", "Version Control", "SMI — Gestão de Manutenção"], "awards": [{"org": {"pt": "1º lugar — IEL Talents Award 2025", "en": "1st place — IEL Talents Award 2025"}, "period": "2025", "desc": {"pt": "Projeto piloto de IA generativa premiado.", "en": "Award-winning generative AI pilot project."}}, {"org": "Perplexity AI Business Fellow", "period": "2025", "desc": {"pt": "Fellow 2025 — discussões sobre adoção responsável de IA em empresas.", "en": "2025 Fellow — discussions on responsible enterprise AI adoption."}}]};
+
+const lang = () => document.documentElement.getAttribute("data-lang");
+const t = (key) => (I18N[lang()][key] !== undefined ? I18N[lang()][key] : key);
+const loc = (v) => (v && typeof v === "object") ? (v[lang()] !== undefined ? v[lang()] : v.en) : v;
+
+function applyI18n(){
+  document.querySelectorAll("[data-i18n]").forEach(function(el){
+    el.textContent = t(el.getAttribute("data-i18n"));
+  });
+  document.documentElement.lang = lang()==="pt" ? "pt-BR" : "en";
+  renderDynamic();
+}
+function itemCard(title, period, desc){
+  return '<div class="exp-item"><h3>'+title+'</h3>'+
+    '<div class="meta">'+(period||"")+'</div>'+
+    (desc?('<p>'+desc+'</p>'):"")+'</div>';
+}
+function renderDynamic(){
+  document.getElementById("expList").innerHTML =
+    DATA.experience.map(function(e){return itemCard(loc(e.role)+" \u00b7 "+e.org, e.period, loc(e.desc));}).join("");
+  document.getElementById("eduList").innerHTML =
+    DATA.education.map(function(e){return itemCard(e.org, e.period, loc(e.role));}).join("");
+  document.getElementById("certList").innerHTML =
+    DATA.certifications.map(function(c){return "<li>"+c+"</li>";}).join("");
+  document.getElementById("skillList").innerHTML =
+    DATA.skills.map(function(s){return "<li>"+s+"</li>";}).join("");
+  document.getElementById("pubList").innerHTML =
+    DATA.publications.map(function(p){return itemCard(p.title, loc(p.period), loc(p.desc));}).join("");
+  document.getElementById("awardList").innerHTML =
+    DATA.awards.map(function(a){return itemCard(loc(a.org), a.period, loc(a.desc));}).join("");
+}
+document.querySelectorAll(".nav-link").forEach(function(btn){
+  btn.addEventListener("click", function(){
+    document.querySelectorAll(".nav-link").forEach(function(b){b.classList.remove("active");});
+    document.querySelectorAll(".tab-panel").forEach(function(p){p.classList.remove("active");});
+    btn.classList.add("active");
+    document.getElementById("tab-"+btn.dataset.tab).classList.add("active");
+    document.getElementById("navLinks").classList.remove("open");
+    window.scrollTo({top:0,behavior:"smooth"});
+  });
+});
+document.getElementById("navToggle").addEventListener("click", function(){
+  document.getElementById("navLinks").classList.toggle("open");
+});
+document.getElementById("langToggle").addEventListener("click", function(){
+  var next = lang()==="pt" ? "en" : "pt";
+  document.documentElement.setAttribute("data-lang", next);
+  localStorage.setItem("lang", next);
+  applyI18n();
+});
+async function loadRepos(){
+  var grid = document.getElementById("repoGrid");
+  try{
+    var res = await fetch("https://api.github.com/users/"+USERNAME+"/repos?per_page=100&sort=updated");
+    if(!res.ok) throw new Error("GitHub API "+res.status);
+    var repos = await res.json();
+    repos = repos.filter(function(r){return !r.fork;})
+      .sort(function(a,b){return (b.stargazers_count-a.stargazers_count) || (new Date(b.pushed_at)-new Date(a.pushed_at));})
+      .slice(0,9);
+    grid.innerHTML = repos.map(function(r){
+      return '<a class="repo-card" href="'+r.html_url+'" target="_blank" rel="noopener">'+
+        '<h4>'+r.name+'</h4>'+
+        '<p>'+(r.description ? r.description : (lang()==="pt"?"Sem descri\u00e7\u00e3o.":"No description."))+'</p>'+
+        '<div class="repo-meta">'+
+          (r.language?('<span class="repo-lang">'+r.language+'</span>'):"")+
+          '<span>\u2605 '+r.stargazers_count+'</span>'+
+        '</div></a>';
+    }).join("") || ('<p class="body-copy">'+(lang()==="pt"?"Nenhum reposit\u00f3rio p\u00fablico.":"No public repositories.")+'</p>');
+  }catch(err){
+    grid.innerHTML = '<p class="body-copy">'+
+      (lang()==="pt"?"N\u00e3o foi poss\u00edvel carregar os reposit\u00f3rios agora. Veja em ":"Couldn't load repositories right now. See ")+
+      '<a href="https://github.com/'+USERNAME+'" target="_blank" rel="noopener">github.com/'+USERNAME+'</a>.</p>';
+  }
+}
+// Inject Google Fonts at runtime (avoids any tag-stripping)
+(function(){
+  var l = document.createElement("link");
+  l.rel = "stylesheet";
+  l.href = "https://fonts.googleapis.com/css2?family=Archivo+Black&family=Silkscreen:wght@400;700&family=VT323&display=swap";
+  document.head.appendChild(l);
+})();
+document.getElementById("year").textContent = new Date().getFullYear();
+document.documentElement.setAttribute("data-lang", localStorage.getItem("lang") || "pt");
+applyI18n();
+loadRepos();
+
+  </script>
 </body>
 </html>
