@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Leonardo Bora — AI Engineer & Agentic Orchestration</title>
+  <meta name="description" content="Leonardo Bora da Costa — Software Engineer, LLM agents, RAG, AI governance & safety. Trainee @ Lightera. Bora Falar de IA." />
+
+  <!-- Google Fonts: display + pixel labels (DESIGN.md substitutes) -->
+  ts.googleapis.com">
+  https://fonts.gstatic.com
+  family=Archivo+Black&family=Silkscreen:wght@400;700&family=VT323&display=swap" rel="stylesheet">
+
+  <link rel="styleshe============ ANALYTICS SLOT ============
+       Opção A (recomendado, privacy-friendly): Plausible
+       <script defer data-domain="leonardobora.github.io" src="https://plausible.io/js/script.js"></script>
+
+       Opção B: Google Analytics 4 — troque G-XXXXXXX
+       <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+       <script>
+         window.dataLayer = window.dataLayer || [];
+         function gtag(){dataLayer.push(arguments);}
+         gtag('js', new Date());
+         gtag('config', 'G-XXXXXXX');
+       </script>
+  ======================================== -->
+</head>
+<body>
+  <div class="machine">
+
+    <!-- MASTHEAD: mascote ASCII + toggles -->
+    <header class="masthead">
+      <div class="mascot-bubble">
+        <pre class="mascot" aria-hidden="true">
+   ┌───────┐
+   │ ▚   ▚ │
+   │   ▔   │
+   │ ═════ │
+   └──┬─┬──┘
+      ╹ ╹        </pre>
+        <span class="bubble-text" data-i18n="mascot"></span>
+      </div>
+
+      <div class="masthead-controls">
+        <button id="langToggle" class="chip" aria-label="Toggle language">
+          <span class="lang-pt">🌐 EN</span>
+          <span class="lang-en">🌐 PT</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- PRIMARY NAV (carbon slab) -->
+    <nav class="nav-bar" aria-label="Primary">
+      <div class="logo-pill">LB<span>.dev</span></div>
+      <ul class="nav-links" id="navLinks">
+        <li><button class="nav-link active" data-tab="home"      data-i18n="nav.home"></button></li>
+        <li><button class="nav-link"        data-tab="exp"       data-i18n="nav.exp"></button></li>
+        <li><button class="nav-link"        data-tab="edu"       data-i18n="nav.edu"></button></li>
+        <li><button class="nav-link"        data-tab="certs"     data-i18n="nav.certs"></button></li>
+        <li><button class="nav-link"        data-tab="pubs"      data-i18n="nav.pubs"></button></li>
+        <li><button class="nav-link"        data-tab="mcp"       data-i18n="nav.mcp"></button></li>
+        <li><button class="nav-link"        data-tab="projects"  data-i18n="nav.projects"></button></li>
+        <li><button class="nav-link"        data-tab="awards"    data-i18n="nav.awards"></button></li>
+      </ul>
+      <button class="chip nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    </nav>
+
+    <!-- SUBNAV strip -->
+    <div class="subnav-strip">
+      <span data-i18n="sub.role"></span>
+      <span class="sep">•</span>
+      <span>Curitiba, PR — Brazil</span>
+      <span class="sep">•</span>
+      <span data-i18n="sub.tag"></span>
+    </div>
+
+    <main class="body-grid">
+      <!-- CONTENT COLUMN -->
+      <section class="content-col">
+
+        <!-- HERO / HOME -->
+        <div class="tab-panel active" id="tab-home">
+          <div class="hero-panel">
+            <h1 class="display" data-i18n="hero.name"></h1>
+            <p class="hero-tagline" data-i18n="hero.tagline"></p>
+            <div class="hero-cta">
+              <a class="btn-icon-arrow" href="https://github.com/leonardobora" target="_blank" rel="noopener">GitHub ▸</a>
+              <a class="btn-icon-arrow" href="https://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">LinkedIn ▸</a>
+            </div>
+          </div>
+
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="label.summary"></span></div>
+            <p class="body-copy" data-i18n="summary"></p>
+          </div>
+        </div>
+
+        <!-- EXPERIENCE -->
+        <div class="tab-panel" id="tab-exp">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.exp"></span></div>
+            <div id="expList" class="stack"></div>
+          </div>
+        </div>
+
+        <!-- EDUCATION -->
+        <div class="tab-panel" id="tab-edu">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.edu"></span></div>
+            <div id="eduList" class="stack"></div>
+          </div>
+        </div>
+
+        <!-- CERTIFICATIONS -->
+        <div class="tab-panel" id="tab-certs">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.certs"></span></div>
+            <ul id="certList" class="chip-list"></ul>
+          </div>
+        </div>
+
+        <!-- PUBLICATIONS -->
+        <div class="tab-panel" id="tab-pubs">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.pubs"></span></div>
+            <div id="pubList" class="stack"></div>
+          </div>
+        </div>
+
+        <!-- MCP / TOP SKILLS -->
+        <div class="tab-panel" id="tab-mcp">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.mcp"></span></div>
+            <p class="body-copy" data-i18n="mcp.intro"></p>
+            <ul id="skillList" class="chip-list"></ul>
+          </div>
+        </div>
+
+        <!-- PROJECTS (GitHub API) -->
+        <div class="tab-panel" id="tab-projects">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.projects"></span></div>
+            <p class="body-copy" data-i18n="projects.intro"></p>
+            <div id="repoGrid" class="repo-grid">
+              <p class="body-copy" data-i18n="projects.loading"></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- AWARDS -->
+        <div class="tab-panel" id="tab-awards">
+          <div class="plate">
+            <div class="section-label-bar"><span data-i18n="nav.awards"></span></div>
+            <div id="awardList" class="stack"></div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- RIGHT ACTION RAIL -->
+      <aside class="rail">
+        <a class="btn-secondary" href="https://github.com/leonardobora" target="_blank" rel="noopener">▸ GitHub</a>
+        ://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">▸ LinkedIn</a>
+        ardo.bora@outlook.com">▸ E-mail</a>
+        <a class="btn-secondary" id="newsletterBtn" href="https://www.linkedin.com/in/leonardobora" target="_blank" rel="noopener">▸ Bora Falar de IA</a>
+
+        <div class="info-box">
+          <div class="info-tab" data-i18n="info.title"></div>
+          <p class="body-copy" data-i18n="info.body"></p>
+        </div>
+
+        <div class="promo-card">
+          <span class="display small">MCP</span>
+          <p class="micro" data-i18n="promo.mcp"></p>
+        </div>
+      </aside>
+    </main>
+
+    <footer class="footer-bar">
+      <span class="micro">© <span id="year"></span> Leonardo Bora da Costa — <span data-i18n="footer.rights"></span></span>
+      <span class="esrb-badge micro">BUILT WITH ♥ + LLMs</span>
+    </footer>
+  </div>
+
+  app.js
+</body>
+</html>
