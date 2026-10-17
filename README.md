@@ -1,24 +1,39 @@
-# leonardobora.github.io
+# Leonardo Bora — portfolio
 
-Personal portfolio / business card for **Leonardo Bora da Costa** - AI Engineer, Agentic Orchestration, AI Safety.
-Single self-contained `index.html` (no build step). Nintendo.com-2001 "console chrome" aesthetic, responsive, bilingual (PT/EN), live GitHub projects.
+Personal portfolio for Leonardo Bora da Costa, deployed at [leonardobora.github.io](https://leonardobora.github.io/). This repo reuses the existing GitHub Pages project and its public URL.
 
-## Publish on GitHub Pages (about 2 minutes)
+## Status
 
-1. Create a repository named exactly **`leonardobora.github.io`** (this name serves the site at the root domain).
-2. Upload **`index.html`** to the repository root (drag & drop works).
-3. Go to **Settings > Pages**.
-4. Under **Source**, choose **Deploy from a branch** -> Branch: **`main`** / Folder: **`/ (root)`** -> **Save**.
-5. Wait ~1 minute, then open **https://leonardobora.github.io**.
+The portfolio is a bilingual (Brazilian Portuguese / English) single page prepared for GitHub Pages at `https://leonardobora.github.io/`. It presents verified experience, education, selected projects, research publications and recognition in a minimal editorial layout. GitHub Pages serves the root of `main`; pushing to `main` publishes updates.
 
-## Analytics (optional)
-Open `index.html`, find the `ANALYTICS SLOT` comment in `<head>`, and uncomment ONE option:
-- **Plausible** (recommended, privacy-friendly): no ID needed, just keep the domain.
-- **Google Analytics 4**: replace `G-XXXXXXX` with your Measurement ID.
+## Run locally
 
-## Editing content
-All text lives in the `I18N` (translations) and `DATA` (experience/education/certs/etc.) objects inside the `<script>` block at the bottom of `index.html`. Projects load automatically from `https://api.github.com/users/leonardobora/repos` - no manual updates needed.
+No build step or package install is required. Open `index.html` in a browser, or serve the repository root:
 
-## Notes
-- Fonts (Archivo Black, Silkscreen, VT323) are injected at runtime from Google Fonts.
-- The ASCII mascot is original artwork; no third-party IP is used.
+```sh
+python -m http.server 4173
+```
+
+Then visit `http://127.0.0.1:4173`.
+
+## Verify
+
+```sh
+python -m unittest discover -s tests -v
+```
+
+The checks cover page metadata and landmarks, working in-page navigation, Portuguese and English content, featured repository links, contact links, external-link safety, responsive/reduced-motion styles, and the absence of a runtime GitHub API dependency.
+
+## Structure
+
+- `index.html` — standalone site, styles, language toggle and portfolio content.
+- `archive/portfolio-v1.html` — preserved previous portfolio version.
+- `tests/test_portfolio.py` — dependency-free static checks.
+- `AGENTS.md` — project guidance and Matt Pocock skill setup.
+- `docs/agents/` — issue tracker, triage labels and domain-doc conventions.
+
+The site intentionally does not load analytics or request project data from a third-party API at runtime. Featured projects are curated in the page source; link to GitHub for the full list.
+
+## Publishing
+
+GitHub Pages serves the repository’s `main` branch from the root. Review the local preview and diff before pushing; this agent has not published changes.
