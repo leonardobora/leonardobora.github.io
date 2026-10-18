@@ -44,6 +44,13 @@ class PortfolioTests(unittest.TestCase):
             if href.startswith("#"):
                 self.assertIn(href[1:], ids, f"Broken in-page link: {href}")
 
+    def test_language_css_does_not_hide_document_root(self):
+        self.assertNotRegex(
+            self.source,
+            r'(?m)^\s*\[lang="en"\]\s*\{\s*display:\s*none;',
+        )
+        self.assertIn('html[data-language="pt"] [lang="en"]', self.source)
+
     def test_portfolio_keeps_portuguese_and_english(self):
         html_attrs = next(attrs for tag, attrs in self.document.elements if tag == "html")
         self.assertEqual(html_attrs.get("lang"), "pt-BR")
